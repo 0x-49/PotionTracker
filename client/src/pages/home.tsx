@@ -1,6 +1,10 @@
 import { motion } from "framer-motion";
 import Hero from "@/components/sections/hero";
 import Features from "@/components/sections/features";
+import TechSpecs from "@/components/sections/tech-specs";
+import SuccessStories from "@/components/sections/success-stories";
+import Analytics from "@/components/sections/analytics";
+import Security from "@/components/sections/security";
 import Pricing from "@/components/sections/pricing";
 import Testimonials from "@/components/sections/testimonials";
 import FAQ from "@/components/sections/faq";
@@ -16,6 +20,10 @@ export default function Home() {
     >
       <Hero />
       <Features />
+      <TechSpecs />
+      <SuccessStories />
+      <Analytics />
+      <Security />
       <Pricing />
       <Testimonials />
       <FAQ />
