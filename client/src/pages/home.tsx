@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import Hero from "@/components/sections/hero";
 import Features from "@/components/sections/features";
+import VideoShowcase from "@/components/sections/video-showcase";
 import TechSpecs from "@/components/sections/tech-specs";
 import SuccessStories from "@/components/sections/success-stories";
 import Analytics from "@/components/sections/analytics";
@@ -20,6 +21,7 @@ export default function Home() {
     >
       <Hero />
       <Features />
+      <VideoShowcase />
       <TechSpecs />
       <SuccessStories />
       <Analytics />
