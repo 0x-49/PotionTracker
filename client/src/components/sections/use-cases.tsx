@@ -5,6 +5,7 @@ import { useState, useEffect, useCallback } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 
 const useCases = [
+  //#1
   {
     title: "Whale Wallet Tracking",
     description: "Monitor top Solana traders and replicate their successful strategies in real-time",
@@ -16,6 +17,7 @@ const useCases = [
     metric: "$2.3M",
     metricLabel: "Avg. Monthly Profit"
   },
+  //#2
   {
     title: "Arbitrage Detection",
     description: "Capitalize on price differences across DEXs with millisecond-precision alerts",
@@ -27,6 +29,7 @@ const useCases = [
     metric: "0.5s",
     metricLabel: "Average Response Time"
   },
+  //#3
   {
     title: "Token Launches",
     description: "Be first to spot and trade new token listings with our advanced detection system",
@@ -38,6 +41,7 @@ const useCases = [
     metric: "100%",
     metricLabel: "Launch Detection Rate"
   },
+  //#4
   {
     title: "NFT Trading",
     description: "Track top NFT traders and spot collection momentum before the crowd",
@@ -49,6 +53,7 @@ const useCases = [
     metric: "15min",
     metricLabel: "Average Lead Time"
   },
+  //#5
   {
     title: "DeFi Yield Farming",
     description: "Optimize your yield farming strategy with real-time APY tracking",
@@ -60,6 +65,7 @@ const useCases = [
     metric: "32%",
     metricLabel: "Avg. APY Improvement"
   },
+  //#6
   {
     title: "Smart Money Tracking",
     description: "Follow institutional traders and smart money movements in real-time",
@@ -71,6 +77,7 @@ const useCases = [
     metric: "$5M+",
     metricLabel: "Daily Trading Volume"
   },
+  //#7
   {
     title: "MEV Protection",
     description: "Shield your trades from MEV bots and front-running attacks",
@@ -82,6 +89,7 @@ const useCases = [
     metric: "98%",
     metricLabel: "Protection Rate"
   },
+  //#8
   {
     title: "Protocol Analytics",
     description: "Deep insights into DeFi protocol performance and security metrics",
@@ -93,6 +101,7 @@ const useCases = [
     metric: "24/7",
     metricLabel: "Monitoring Coverage"
   },
+  //#9
   {
     title: "Trading Automation",
     description: "Set up sophisticated trading rules with conditional triggers",
@@ -104,6 +113,7 @@ const useCases = [
     metric: "100x",
     metricLabel: "Strategy Execution Speed"
   },
+  //#10
   {
     title: "Portfolio Management",
     description: "Track and optimize your entire crypto portfolio in one place",
@@ -115,6 +125,7 @@ const useCases = [
     metric: "$10M+",
     metricLabel: "Portfolio Size Support"
   },
+  //#11
   {
     title: "Market Sentiment",
     description: "Gauge market sentiment with AI-powered social media analysis",
@@ -126,6 +137,7 @@ const useCases = [
     metric: "93%",
     metricLabel: "Prediction Accuracy"
   },
+  //#12
   {
     title: "Security Monitoring",
     description: "Protect your assets with advanced security monitoring",
