@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { ArrowRight, Rocket, BarChart3, Trophy, Zap, Timer } from "lucide-react";
-import Head from "next/head";
+import { Helmet } from "react-helmet";
 
 export default function Hero() {
   const structuredData = {
@@ -18,14 +18,14 @@ export default function Hero() {
 
   return (
     <>
-      <Head>
+      <Helmet>
         <title>PotionTracker Pro - Transform On-Chain Data Into Life-Changing Profits</title>
         <meta name="description" content="Elite crypto trading platform with military-grade tracking. Monitor up to 500 wallets with millisecond precision for an unfair advantage in Solana trading." />
         <meta name="keywords" content="crypto trading, Solana trading, wallet tracking, crypto analytics, trading profits, blockchain data" />
         <script type="application/ld+json">
           {JSON.stringify(structuredData)}
         </script>
-      </Head>
+      </Helmet>
       <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden" role="banner" aria-label="Hero Section">
         {/* Enhanced animated background gradient */}
         <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-background to-background z-0" aria-hidden="true">

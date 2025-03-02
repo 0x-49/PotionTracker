@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import Head from "next/head";
+import { Helmet } from "react-helmet";
 import Hero from "../components/sections/hero";
 import PainPoints from "../components/sections/pain-points";
 import EVAdvantage from "../components/sections/evadvantage";
@@ -230,7 +230,7 @@ const Home = () => {
 
   return (
     <>
-      <Head>
+      <Helmet>
         <title>PotionTracker Pro - Advanced Crypto Trading Analytics Platform</title>
         <meta name="description" content="Transform on-chain data into profits with PotionTracker Pro. Military-grade tracking, real-time analytics, and advanced trading tools for serious crypto traders." />
         <meta name="keywords" content="crypto trading, blockchain analytics, wallet tracking, trading automation, crypto profits, real-time alerts, trading tools" />
@@ -243,7 +243,7 @@ const Home = () => {
         <script type="application/ld+json">
           {JSON.stringify(pageStructuredData)}
         </script>
-      </Head>
+      </Helmet>
       <main className="min-h-screen bg-background text-foreground" role="main">
         <motion.div
           initial={{ opacity: 0 }}
