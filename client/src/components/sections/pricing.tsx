@@ -5,42 +5,85 @@ import { Check } from "lucide-react";
 
 const plans = [
   {
-    name: "Starter",
+    name: "Free Discord + Tracker",
+    price: "0",
+    period: "lifetime",
+    features: [
+      "Track up to 5 wallets",
+      "20 Notifications per Minute",
+      "200 Notifications per Hour",
+      "1000 Notifications per Day",
+      "Custom sounds and wallet tagging",
+      "Community moderator support",
+      "Free Discord access"
+    ]
+  },
+  {
+    name: "Discord Access (Weekly)",
+    price: "60",
+    period: "/week",
+    features: [
+      "Live crypto trading education",
+      "Exclusive live streams",
+      "Custom bot analysis",
+      "Crypto Twitter insights",
+      "Lightning-speed updates",
+      "Social media analysis",
+      "Top holder tracking"
+    ]
+  },
+  {
+    name: "Discord Access (Crypto)",
+    price: "150",
+    period: "/month",
+    features: [
+      "Live crypto trading education",
+      "Exclusive live streams",
+      "Custom bot analysis",
+      "Crypto Twitter insights",
+      "Lightning-speed updates",
+      "Social media analysis",
+      "Top holder tracking"
+    ]
+  },
+  {
+    name: "Tracker Starter",
     price: "40",
     period: "/month",
     features: [
       "Track up to 20 wallets",
-      "Basic notification rates",
-      "Standard latency alerts",
-      "Basic PNL tracking"
+      "60 Notifications per Minute",
+      "600 Notifications per Hour",
+      "4000 Notifications per Day",
+      "Custom sounds and wallet tagging",
+      "Discord access not included"
     ]
   },
   {
-    name: "Advanced",
+    name: "Tracker Advanced",
     price: "120",
     period: "/month",
     popular: true,
     features: [
       "Track up to 250 wallets",
-      "Unlimited notifications",
-      "Priority alert delivery",
-      "Advanced PNL analytics",
-      "Custom sounds and tags",
-      "CT Tracker integration"
+      "120 Notifications per Minute",
+      "1200 Notifications per Hour",
+      "20000 Notifications per Day",
+      "Custom sounds and wallet tagging",
+      "Discord access not included"
     ]
   },
   {
-    name: "Whale",
+    name: "Tracker Whale",
     price: "200",
     period: "/month",
     features: [
       "Track up to 500 wallets",
-      "Unlimited notifications",
-      "Fastest alert delivery",
-      "Premium PNL analytics",
-      "Custom bots access",
-      "Priority support",
-      "Advanced integrations"
+      "UNLIMITED Notifications",
+      "No rate limits",
+      "Premium features access",
+      "Custom sounds and wallet tagging",
+      "Discord access not included"
     ]
   }
 ];
@@ -97,7 +140,10 @@ export default function Pricing() {
                       </li>
                     ))}
                   </ul>
-                  <Button className="w-full mt-8">
+                  <Button
+                    className="w-full mt-8"
+                    onClick={() => window.open("https://whop.com/potiontracker-advanced/?a=digitalartlab", "_blank")}
+                  >
                     Get Started
                   </Button>
                 </CardContent>

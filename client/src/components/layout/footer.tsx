@@ -1,6 +1,8 @@
 import { Link } from "wouter";
 import { Mail, Phone, MapPin } from "lucide-react";
 
+const AFFILIATE_URL = "https://whop.com/potiontracker-advanced/?a=digitalartlab";
+
 const navigation = {
   product: [
     { name: "Features", href: "#features" },
@@ -11,13 +13,13 @@ const navigation = {
   ],
   support: [
     { name: "Contact", href: "#contact" },
-    { name: "Documentation", href: "/docs" },
+    { name: "Documentation", href: `${AFFILIATE_URL}/docs` },
     { name: "FAQ", href: "#faq" }
   ],
   legal: [
-    { name: "Privacy Policy", href: "/privacy" },
-    { name: "Terms of Service", href: "/terms" },
-    { name: "Cookie Policy", href: "/cookies" }
+    { name: "Privacy Policy", href: `${AFFILIATE_URL}/privacy` },
+    { name: "Terms of Service", href: `${AFFILIATE_URL}/terms` },
+    { name: "Cookie Policy", href: `${AFFILIATE_URL}/cookies` }
   ],
   social: [
     { name: "Twitter", href: "https://x.com/potionalpha", icon: "twitter" },
@@ -26,6 +28,23 @@ const navigation = {
 };
 
 export default function Footer() {
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    const href = e.currentTarget.getAttribute('href');
+    if (href?.startsWith('#')) {
+      e.preventDefault();
+      const element = document.querySelector(href);
+      if (element) {
+        const headerOffset = 80;
+        const elementPosition = element.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+      }
+    }
+  };
+
   return (
     <footer className="bg-background/95 border-t border-border/50 pt-16 pb-8">
       <div className="container mx-auto px-4">
@@ -38,6 +57,7 @@ export default function Footer() {
                   <a
                     href={item.href}
                     className="text-sm text-muted-foreground hover:text-purple-400 transition-colors"
+                    onClick={handleNavClick}
                   >
                     {item.name}
                   </a>
@@ -54,6 +74,9 @@ export default function Footer() {
                   <a
                     href={item.href}
                     className="text-sm text-muted-foreground hover:text-purple-400 transition-colors"
+                    onClick={handleNavClick}
+                    target={item.href.startsWith('#') ? undefined : '_blank'}
+                    rel={item.href.startsWith('#') ? undefined : 'noopener noreferrer'}
                   >
                     {item.name}
                   </a>
@@ -67,12 +90,14 @@ export default function Footer() {
             <ul className="space-y-3">
               {navigation.legal.map((item) => (
                 <li key={item.name}>
-                  <Link
+                  <a
                     href={item.href}
                     className="text-sm text-muted-foreground hover:text-purple-400 transition-colors"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     {item.name}
-                  </Link>
+                  </a>
                 </li>
               ))}
             </ul>
@@ -99,12 +124,6 @@ export default function Footer() {
                   (800) 569-1387
                 </a>
               </li>
-              <li>
-                <address className="text-sm text-muted-foreground flex items-center gap-2 not-italic">
-                  <MapPin className="w-4 h-4" />
-                  4286 Bells Ferry Rd, Kennesaw, GA 30144
-                </address>
-              </li>
             </ul>
           </div>
         </div>
@@ -112,16 +131,16 @@ export default function Footer() {
         <div className="border-t border-border/50 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-sm text-muted-foreground">
-              © {new Date().getFullYear()} Potion Tracker Advanced. All rights reserved.
+              © {new Date().getFullYear()} Potion Tracker. All rights reserved.
             </p>
-            <div className="flex items-center gap-6">
+            <div className="flex items-center gap-4">
               {navigation.social.map((item) => (
                 <a
                   key={item.name}
                   href={item.href}
+                  className="text-muted-foreground hover:text-purple-400 transition-colors"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-muted-foreground hover:text-purple-400 transition-colors"
                 >
                   {item.name}
                 </a>

@@ -4,6 +4,8 @@ import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
+const AFFILIATE_URL = "https://whop.com/potiontracker-advanced/?a=digitalartlab";
+
 const navigation = [
   { name: "Features", href: "#features" },
   { name: "Success Stories", href: "#success-stories" },
@@ -15,6 +17,24 @@ const navigation = [
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    const href = e.currentTarget.getAttribute('href');
+    if (href?.startsWith('#')) {
+      e.preventDefault();
+      const element = document.querySelector(href);
+      if (element) {
+        const headerOffset = 80;
+        const elementPosition = element.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+      }
+    }
+    setMobileMenuOpen(false);
+  };
 
   return (
     <header className="fixed w-full bg-background/80 backdrop-blur-md z-50 border-b border-border/50">
@@ -32,6 +52,7 @@ export default function Header() {
                   key={item.name}
                   href={item.href}
                   className="text-sm text-muted-foreground hover:text-purple-400 transition-colors"
+                  onClick={handleNavClick}
                 >
                   {item.name}
                 </a>
@@ -40,12 +61,26 @@ export default function Header() {
           </div>
 
           <div className="hidden md:flex items-center gap-4">
-            <Button variant="outline" className="hover:border-purple-500">
-              Log In
-            </Button>
-            <Button className="bg-purple-600 hover:bg-purple-700">
-              Get Started
-            </Button>
+            <a
+              href={AFFILIATE_URL}
+              className="w-full"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button variant="outline" className="hover:border-purple-500 w-full">
+                Log In
+              </Button>
+            </a>
+            <a
+              href={AFFILIATE_URL}
+              className="w-full"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button className="bg-purple-600 hover:bg-purple-700 w-full">
+                Get Started
+              </Button>
+            </a>
           </div>
 
           {/* Mobile menu button */}
@@ -76,18 +111,30 @@ export default function Header() {
                     key={item.name}
                     href={item.href}
                     className="text-sm text-muted-foreground hover:text-purple-400 transition-colors"
-                    onClick={() => setMobileMenuOpen(false)}
+                    onClick={handleNavClick}
                   >
                     {item.name}
                   </a>
                 ))}
                 <div className="flex flex-col gap-2 pt-4 border-t border-border/50">
-                  <Button variant="outline" className="w-full">
-                    Log In
-                  </Button>
-                  <Button className="w-full bg-purple-600 hover:bg-purple-700">
-                    Get Started
-                  </Button>
+                  <a
+                    href={AFFILIATE_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Button variant="outline" className="w-full hover:border-purple-500">
+                      Log In
+                    </Button>
+                  </a>
+                  <a
+                    href={AFFILIATE_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Button className="w-full bg-purple-600 hover:bg-purple-700">
+                      Get Started
+                    </Button>
+                  </a>
                 </div>
               </div>
             </motion.div>

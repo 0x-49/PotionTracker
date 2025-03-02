@@ -1,0 +1,387 @@
+import { motion } from "framer-motion";
+import Hero from "../components/sections/hero";
+import VideoShowcase from "../components/sections/video-showcase";
+import Features from "../components/sections/features";
+import UseCases from "../components/sections/use-cases";
+import Pricing from "../components/sections/pricing";
+import Testimonials from "../components/sections/testimonials";
+import SuccessStories from "../components/sections/success-stories";
+import FAQ from "../components/sections/faq";
+import TechSpecs from "../components/sections/tech-specs";
+import Analytics from "../components/sections/analytics";
+import Security from "../components/sections/security";
+import { PlayCircle } from "lucide-react";
+
+const AFFILIATE_URL = "https://whop.com/promoguyplus/?a=digitalartlab";
+
+// Hero Section CTA
+const HeroSectionCTA = () => (
+  <div className="responsive-container relative py-20">
+    <div className="text-center">
+      <p className="text-blue-1200 dark:text-blue-8400 mb-12 max-w-3xl mx-auto text-xl leading-relaxed">
+        Stop missing out on life-changing sports betting opportunities. Join PromoGuy Plus today and gain access to a world-class platform that guarantees your success.
+      </p>
+      <a
+        href={AFFILIATE_URL}
+        className="inline-block px-10 py-5 bg-gradient-to-r from-indigo-600 to-blue-600 hover:from-indigo-700 hover:to-blue-700 text-white rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl text-xl font-semibold"
+      >
+        Start Your Journey Now
+      </a>
+    </div>
+  </div>
+);
+
+// Features Section CTA
+const FeaturesSectionCTA = () => (
+  <div className="responsive-container relative py-20">
+    <div className="text-center">
+      <p className="text-blue-1200 dark:text-blue-8400 mb-12 max-w-3xl mx-auto text-xl leading-relaxed">
+        Why struggle alone when you can dominate sports betting? Get exclusive access to our proven tools, expert guidance, and a premium community that ensures your success.
+      </p>
+      <a
+        href={AFFILIATE_URL}
+        className="inline-block px-10 py-5 bg-gradient-to-r from-pink-600 to-red-600 hover:from-pink-700 hover:to-red-700 text-white rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl text-xl font-semibold"
+      >
+        Try PromoGuy Plus Risk-Free
+      </a>
+    </div>
+  </div>
+);
+
+// Pricing Section CTA
+const PricingSectionCTA = () => (
+  <div className="responsive-container relative py-20">
+    <div className="text-center">
+      <p className="text-blue-1200 dark:text-blue-8400 mb-12 max-w-3xl mx-auto text-xl leading-relaxed">
+        Simplify your sports betting with PromoGuy Plus. Join today and transform your betting into a highly profitable venture.
+      </p>
+      <a
+        href={AFFILIATE_URL}
+        className="inline-block px-10 py-5 bg-gradient-to-r from-purple-600 to-violet-600 hover:from-purple-700 hover:to-violet-700 text-white rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl text-xl font-semibold"
+      >
+        Upgrade Your Game Today
+      </a>
+    </div>
+  </div>
+);
+
+// Success Stories Section CTA
+const SuccessStoriesSectionCTA = () => (
+  <div className="responsive-container relative py-20">
+    <div className="text-center">
+      <p className="text-blue-1200 dark:text-blue-8400 mb-12 max-w-3xl mx-auto text-xl leading-relaxed">
+        Don't settle for average results. Join PromoGuy Plus and become part of a community that consistently dominates the sports betting market.
+      </p>
+      <a
+        href={AFFILIATE_URL}
+        className="inline-block px-10 py-5 bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-700 hover:to-orange-700 text-white rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl text-xl font-semibold"
+      >
+        Secure Your Spot Today
+      </a>
+    </div>
+  </div>
+);
+
+// Missing sections restored as placeholders.
+// Replace the placeholder content with your actual section components as needed.
+const PainPoints = () => (
+  <section className="py-20 bg-background/95 relative overflow-hidden">
+    <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:40px_40px]" />
+    <div className="container mx-auto px-4 relative z-10">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        viewport={{ once: true }}
+        className="text-center mb-16"
+      >
+        <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          Common Crypto Trading Challenges
+        </h2>
+        <p className="text-muted-foreground max-w-2xl mx-auto">
+          Don't let these common obstacles hold back your trading success
+        </p>
+      </motion.div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {[
+          {
+            title: "Missed Opportunities",
+            description: "Late to promising trades due to slow or unreliable tracking tools"
+          },
+          {
+            title: "Information Overload",
+            description: "Struggling to filter signal from noise in the crypto market"
+          },
+          {
+            title: "Manual Tracking",
+            description: "Wasting time monitoring multiple wallets and platforms manually"
+          },
+          {
+            title: "Delayed Notifications",
+            description: "Missing crucial market moves due to slow alert systems"
+          },
+          {
+            title: "Limited Insights",
+            description: "Unable to identify patterns in successful traders' strategies"
+          },
+          {
+            title: "Technical Complexity",
+            description: "Dealing with complicated and unreliable tracking solutions"
+          }
+        ].map((point, index) => (
+          <motion.div
+            key={index}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: index * 0.1 }}
+            viewport={{ once: true }}
+          >
+            <div className="p-6 rounded-lg bg-card/50 backdrop-blur border border-border/50 hover:border-purple-500/20 transition-all duration-300">
+              <h3 className="text-lg font-semibold mb-2 text-purple-400">{point.title}</h3>
+              <p className="text-muted-foreground">{point.description}</p>
+            </div>
+          </motion.div>
+        ))}
+      </div>
+    </div>
+  </section>
+);
+
+const EVAdvantage = () => (
+  <section className="py-20 bg-gradient-to-b from-background to-background/95 relative overflow-hidden">
+    <div className="container mx-auto px-4 relative z-10">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        viewport={{ once: true }}
+        className="text-center mb-16"
+      >
+        <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          Your Edge in the Market
+        </h2>
+        <p className="text-muted-foreground max-w-2xl mx-auto">
+          Maximize your expected value with advanced tracking capabilities
+        </p>
+      </motion.div>
+
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <motion.div
+          initial={{ opacity: 0, x: -20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+          className="space-y-6"
+        >
+          <div className="p-6 rounded-lg bg-card/50 backdrop-blur border border-border/50 hover:border-purple-500/20 transition-all duration-300">
+            <h3 className="text-xl font-semibold mb-3 text-purple-400">Real-Time Alpha</h3>
+            <p className="text-muted-foreground">Track successful traders' moves as they happen, giving you first-mover advantage on profitable opportunities.</p>
+          </div>
+          <div className="p-6 rounded-lg bg-card/50 backdrop-blur border border-border/50 hover:border-purple-500/20 transition-all duration-300">
+            <h3 className="text-xl font-semibold mb-3 text-purple-400">Pattern Recognition</h3>
+            <p className="text-muted-foreground">Identify winning strategies and recurring patterns in top traders' behavior.</p>
+          </div>
+          <div className="p-6 rounded-lg bg-card/50 backdrop-blur border border-border/50 hover:border-purple-500/20 transition-all duration-300">
+            <h3 className="text-xl font-semibold mb-3 text-purple-400">Risk Management</h3>
+            <p className="text-muted-foreground">Set precise entry and exit points based on real market data and proven trader behavior.</p>
+          </div>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, x: 20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+          className="relative"
+        >
+          <div className="aspect-square rounded-lg bg-gradient-to-br from-purple-500/20 via-purple-500/10 to-transparent p-1">
+            <div className="w-full h-full rounded-lg bg-card/50 backdrop-blur border border-border/50 p-8 flex items-center justify-center">
+              <div className="text-center">
+                <h4 className="text-2xl font-bold text-purple-400 mb-4">Average ROI Increase</h4>
+                <p className="text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-purple-600">247%</p>
+                <p className="text-muted-foreground mt-2">Among Active Users</p>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+      </div>
+    </div>
+  </section>
+);
+
+const QuickStart = () => (
+  <section className="py-20 bg-background relative overflow-hidden">
+    <div className="container mx-auto px-4 relative z-10">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        viewport={{ once: true }}
+        className="text-center mb-16"
+      >
+        <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          Start Trading in Minutes
+        </h2>
+        <p className="text-muted-foreground max-w-2xl mx-auto">
+          Follow these simple steps to begin your journey to profitable trading
+        </p>
+      </motion.div>
+
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {[
+          {
+            step: "1",
+            title: "Create Account",
+            description: "Sign up and verify your account in less than 60 seconds"
+          },
+          {
+            step: "2",
+            title: "Add Wallets",
+            description: "Import your favorite traders' wallets or add your own"
+          },
+          {
+            step: "3",
+            title: "Start Tracking",
+            description: "Receive real-time alerts and begin making informed trades"
+          }
+        ].map((item, index) => (
+          <motion.div
+            key={index}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: index * 0.2 }}
+            viewport={{ once: true }}
+            className="relative"
+          >
+            <div className="p-8 rounded-lg bg-card/50 backdrop-blur border border-border/50 hover:border-purple-500/20 transition-all duration-300">
+              <div className="absolute -top-4 -left-4 w-8 h-8 rounded-full bg-purple-500 flex items-center justify-center text-white font-bold">
+                {item.step}
+              </div>
+              <h3 className="text-xl font-semibold mb-3 text-purple-400">{item.title}</h3>
+              <p className="text-muted-foreground">{item.description}</p>
+            </div>
+          </motion.div>
+        ))}
+      </div>
+
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.6 }}
+        viewport={{ once: true }}
+        className="mt-12 text-center"
+      >
+        <a
+          href={AFFILIATE_URL}
+          className="inline-block px-8 py-4 bg-gradient-to-r from-purple-500 to-purple-600 text-white rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-purple-500/25 font-semibold"
+        >
+          Start Your Journey Now
+        </a>
+      </motion.div>
+    </div>
+  </section>
+);
+
+const DeepDive = () => (
+  <section className="py-20 bg-gradient-to-b from-background/95 to-background relative overflow-hidden">
+    <div className="container mx-auto px-4 relative z-10">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        viewport={{ once: true }}
+        className="text-center mb-16"
+      >
+        <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          Advanced Trading Insights
+        </h2>
+        <p className="text-muted-foreground max-w-2xl mx-auto">
+          Unlock deeper understanding of market movements and trader behavior
+        </p>
+      </motion.div>
+
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <motion.div
+          initial={{ opacity: 0, x: -20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+          className="space-y-6"
+        >
+          <div className="p-6 rounded-lg bg-card/50 backdrop-blur border border-border/50 hover:border-purple-500/20 transition-all duration-300">
+            <h3 className="text-xl font-semibold mb-3 text-purple-400">Wallet Analysis</h3>
+            <ul className="space-y-3 text-muted-foreground">
+              <li>• Track historical performance metrics</li>
+              <li>• Analyze trading patterns and frequencies</li>
+              <li>• Monitor portfolio composition changes</li>
+            </ul>
+          </div>
+          <div className="p-6 rounded-lg bg-card/50 backdrop-blur border border-border/50 hover:border-purple-500/20 transition-all duration-300">
+            <h3 className="text-xl font-semibold mb-3 text-purple-400">Market Intelligence</h3>
+            <ul className="space-y-3 text-muted-foreground">
+              <li>• Identify emerging market trends</li>
+              <li>• Track token accumulation patterns</li>
+              <li>• Monitor whale wallet movements</li>
+            </ul>
+          </div>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, x: 20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+          className="space-y-6"
+        >
+          <div className="p-6 rounded-lg bg-card/50 backdrop-blur border border-border/50 hover:border-purple-500/20 transition-all duration-300">
+            <h3 className="text-xl font-semibold mb-3 text-purple-400">Strategy Optimization</h3>
+            <ul className="space-y-3 text-muted-foreground">
+              <li>• Backtest trading strategies</li>
+              <li>• Optimize entry and exit points</li>
+              <li>• Analyze risk-reward ratios</li>
+            </ul>
+          </div>
+          <div className="p-6 rounded-lg bg-card/50 backdrop-blur border border-border/50 hover:border-purple-500/20 transition-all duration-300">
+            <h3 className="text-xl font-semibold mb-3 text-purple-400">Network Analysis</h3>
+            <ul className="space-y-3 text-muted-foreground">
+              <li>• Map trader relationships</li>
+              <li>• Track fund flows between wallets</li>
+              <li>• Identify influential traders</li>
+            </ul>
+          </div>
+        </motion.div>
+      </div>
+    </div>
+  </section>
+);
+
+
+const Home = () => {
+  return (
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+      className="min-h-screen bg-background text-foreground"
+    >
+      <Hero />
+      <PainPoints />
+      <EVAdvantage />
+      <Features />
+      <VideoShowcase />
+      <QuickStart />
+      <DeepDive />
+      <TechSpecs />
+      <UseCases />
+      <SuccessStories />
+      <Analytics />
+      <Security />
+      <Pricing />
+      <Testimonials />
+      <FAQ />
+    </motion.div>
+  );
+};
+
+export default Home;
